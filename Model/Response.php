@@ -22,6 +22,8 @@ class Response
      * @var array The google analytics response rows.
      */
     private $rows;
+    private $columnHeaders;
+    private $totalsForAllResults;
 
     /**
      * The google analytics response constructor.
@@ -74,4 +76,26 @@ class Response
 
         return $this;
     }
+
+    public function setColumnHeaders($columnHeaders)
+    {
+        $this->columnHeaders = $columnHeaders;
+    }
+
+    public function getColumnHeaders()
+    {
+        return $this->columnHeaders;
+    }
+
+    public function setTotalsForAllResults($totalsForAllResults)
+    {
+        $this->totalsForAllResults = $totalsForAllResults;
+    }
+
+    public function getTotalsForAllResults()
+    {
+        return $this->totalsForAllResults;
+    }
+
+
 }

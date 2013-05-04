@@ -74,6 +74,12 @@ class GoogleAnalyticsService
         if (isset($json->rows)) {
             $response->setRows($json->rows);
         }
+        if (isset($json->columnHeaders)) {
+            $response->setColumnHeaders($json->columnHeaders);
+        }
+        if (isset($json->totalsForAllResults)) {
+            $response->setTotalsForAllResults($json->totalsForAllResults);
+        }
 
         return $response;
     }
