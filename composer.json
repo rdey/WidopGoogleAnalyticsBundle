@@ -1,5 +1,5 @@
 {
-    "name": "widop/google-analytics-bundle",
+    "name": "darles/google-analytics-bundle",
     "description": "Google certificate-based authentication in server-to-server interactions with google analytics",
     "keywords": [ "google", "analytics", "server" ],
     "type": "symfony-bundle",
@@ -16,7 +16,7 @@
     ],
     "require": {
         "symfony/framework-bundle": "2.*",
-        "widop/google-analytics": "1.0.*",
+        "darles/google-analytics": "1.0.*",
         "widop/http-adapter-bundle": "1.*"
     },
     "require-dev": {
