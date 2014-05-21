@@ -16,7 +16,7 @@
     ],
     "require": {
         "symfony/framework-bundle": "2.*",
-        "darles/google-analytics": "1.0.*",
+        "darles/google-analytics": "dev-master",
         "widop/http-adapter-bundle": "1.*"
     },
     "require-dev": {
