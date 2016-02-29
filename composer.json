@@ -16,8 +16,8 @@
     ],
     "require": {
         "symfony/framework-bundle": "3.*",
-        "dominium/google-analytics": "dev-master",
-        "dominium/http-adapter-bundle": "dev-master"
+        "dominium/google-analytics": "1.3",
+        "dominium/http-adapter-bundle": "1.3"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*"
