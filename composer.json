@@ -16,8 +16,8 @@
     ],
     "require": {
         "symfony/framework-bundle": "3.*",
-        "darles/google-analytics": "1.0.*",
-        "darles/http-adapter-bundle": "1.*"
+        "dominium/google-analytics": "1.0.*",
+        "dominium/http-adapter-bundle": "1.*"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*"
