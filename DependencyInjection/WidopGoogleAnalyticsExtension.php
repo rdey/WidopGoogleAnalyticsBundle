@@ -38,7 +38,7 @@ class WidopGoogleAnalyticsExtension extends Extension
         $container
             ->getDefinition('widop_google_analytics.client')
             ->addArgument($config['client_id'])
-            ->addArgument($config['private_key_file'])
+            ->addArgument($config['private_key'])
             ->addArgument(new Reference($config['http_adapter']))
             ->addArgument($config['service_url']);
 

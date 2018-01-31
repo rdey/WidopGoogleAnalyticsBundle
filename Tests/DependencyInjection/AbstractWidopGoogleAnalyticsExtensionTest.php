@@ -59,11 +59,12 @@ abstract class AbstractWidopGoogleAnalyticsExtensionTest extends \PHPUnit_Framew
         $this->container->compile();
 
         $googleAnalytics = $this->container->get('widop_google_analytics');
+        $certificate = base64_encode(file_get_contents(__DIR__.'/Fixtures/certificate.p12'));
 
         $this->assertInstanceOf('Widop\GoogleAnalytics\Service', $googleAnalytics);
         $this->assertSame('https://accounts.google.com/o/oauth2/token', $googleAnalytics->getClient()->getUrl());
         $this->assertSame('client_id', $googleAnalytics->getClient()->getClientId());
-        $this->assertSame('certificate.p12', substr($googleAnalytics->getClient()->getPrivateKeyFile(), -15));
+        $this->assertSame($certificate, $googleAnalytics->getClient()->getPrivateKey());
         $this->assertSame('curl', $googleAnalytics->getClient()->getHttpAdapter()->getName());
     }
 
@@ -110,9 +111,9 @@ abstract class AbstractWidopGoogleAnalyticsExtensionTest extends \PHPUnit_Framew
     /**
      * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
      */
-    public function testPrivateKeyFileRequired()
+    public function testPrivateKeyRequired()
     {
-        $this->loadConfiguration($this->container, 'private_key_file');
+        $this->loadConfiguration($this->container, 'private_key');
         $this->container->compile();
     }
 

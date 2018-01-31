@@ -39,7 +39,7 @@ class Configuration implements ConfigurationInterface
                     ->isRequired()
                     ->cannotBeEmpty()
                 ->end()
-                ->scalarNode('private_key_file')
+                ->scalarNode('private_key')
                     ->isRequired()
                     ->cannotBeEmpty()
                 ->end()

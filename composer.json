@@ -16,7 +16,7 @@
     ],
     "require": {
         "symfony/framework-bundle": "3.*",
-        "rdey/google-analytics": "1.3.1",
+        "rdey/google-analytics": "^2.0.0",
         "dominium/http-adapter-bundle": "1.3"
     },
     "require-dev": {
@@ -31,7 +31,7 @@
     "target-dir": "Widop/GoogleAnalyticsBundle",
     "extra": {
         "branch-alias": {
-            "dev-master": "1.1-dev"
+            "dev-master": "2.0-dev"
         }
     }
 }
