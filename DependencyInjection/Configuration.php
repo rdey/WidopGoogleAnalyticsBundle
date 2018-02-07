@@ -49,6 +49,10 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('service_url')
                     ->defaultValue('https://accounts.google.com/o/oauth2/token')
                 ->end()
+                ->scalarNode('cache')
+                    ->isRequired()
+                    ->cannotBeEmpty()
+                ->end()
             ->end();
 
         return $treeBuilder;

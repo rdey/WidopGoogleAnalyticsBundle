@@ -13,7 +13,7 @@ namespace Widop\GoogleAnalyticsBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
@@ -29,8 +29,8 @@ class WidopGoogleAnalyticsExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.xml');
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('services.yml');
 
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
@@ -40,7 +40,8 @@ class WidopGoogleAnalyticsExtension extends Extension
             ->addArgument($config['client_id'])
             ->addArgument($config['private_key'])
             ->addArgument(new Reference($config['http_adapter']))
-            ->addArgument($config['service_url']);
+            ->addArgument($config['service_url'])
+            ->addArgument(new Reference($config['cache']));
 
         $container
             ->getDefinition('widop_google_analytics.query')
