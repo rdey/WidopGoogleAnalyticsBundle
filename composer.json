@@ -15,8 +15,10 @@
         }
     ],
     "require": {
-        "dominium/http-adapter-bundle": "1.3",
-        "rdey/google-analytics": "^3.0.0",
+        "php-http/client-common": "^1.5",
+        "php-http/discovery": "^1.0",
+        "php-http/httplug": "^1.0",
+        "rdey/google-analytics": "dev-http-client as 4.0.0",
         "symfony/config": "^3.0|^4.0",
         "symfony/dependency-injection": "^3.0|^4.0",
         "symfony/http-kernel": "^3.0|^4.0"

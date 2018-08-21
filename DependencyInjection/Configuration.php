@@ -31,28 +31,14 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('client_id')
-                    ->isRequired()
-                    ->cannotBeEmpty()
-                ->end()
-                ->scalarNode('profile_id')
-                    ->isRequired()
-                    ->cannotBeEmpty()
-                ->end()
-                ->scalarNode('private_key')
-                    ->isRequired()
-                    ->cannotBeEmpty()
-                ->end()
-                ->scalarNode('http_adapter')
-                    ->defaultValue('widop_http_adapter.curl')
-                ->end()
+                ->scalarNode('client_id')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('profile_id')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('private_key')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('httplug_client_service')->isRequired()->cannotBeEmpty()->end()
                 ->scalarNode('service_url')
                     ->defaultValue('https://accounts.google.com/o/oauth2/token')
                 ->end()
-                ->scalarNode('cache')
-                    ->isRequired()
-                    ->cannotBeEmpty()
-                ->end()
+                ->scalarNode('cache')->isRequired()->cannotBeEmpty()->end()
             ->end();
 
         return $treeBuilder;

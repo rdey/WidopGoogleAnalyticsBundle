@@ -35,16 +35,15 @@ class WidopGoogleAnalyticsExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container
-            ->getDefinition('widop_google_analytics.client')
-            ->addArgument($config['client_id'])
-            ->addArgument($config['private_key'])
-            ->addArgument(new Reference($config['http_adapter']))
-            ->addArgument($config['service_url'])
-            ->addArgument(new Reference($config['cache']));
+        $container->setParameter('widop_google_analytics.client_id', $config['client_id']);
+        $container->setParameter('widop_google_analytics.private_key', $config['private_key']);
+        $container->setParameter('widop_google_analytics.service_url', $config['service_url']);
+        $container->setParameter('widop_google_analytics.profile_id', $config['profile_id']);
 
-        $container
-            ->getDefinition('widop_google_analytics.query')
-            ->addArgument($config['profile_id']);
+        $container->getDefinition('widop_google_analytics.client')
+            ->replaceArgument(2, new Reference($config['httplug_client_service']));
+
+        $container->getDefinition('widop_google_analytics.client')
+            ->replaceArgument(4, new Reference($config['cache']));
     }
 }
