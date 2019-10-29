@@ -1,4 +1,0 @@
-widop_google_analytics:
-    client_id:        "client_id"
-    private_key_file: "%bundle.dir%/Tests/Fixtures/certificate.p12"
-    http_adapter:     "widop_http_adapter.curl"
